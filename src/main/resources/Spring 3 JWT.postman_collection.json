@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "cc6fab9c-af4d-485b-8a04-b46e0cc86b55",
+		"name": "Spring 3 JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7609156"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Amila\",\n    \"email\": \"amila@gmail.com\",\n    \"password\": \"secret\",\n    \"roles\": \"ROLE_ADMIN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/products/new"
+			},
+			"response": []
+		},
+		{
+			"name": "Get JWT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Amila\",\n    \"password\": \"secret\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/products/authenticate"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllProducts - ROLE_ADMIN",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbWlsYSIsImlhdCI6MTcxNDMxNTA4MiwiZXhwIjoxNzE0MzE2ODgyfQ.MIvfpKWAPHsnYj8gcNyGNE0zfhpZ7lseRPRCNwcVnfM"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Amila\",\n    \"password\": \"secret\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/products/all"
+			},
+			"response": []
+		},
+		{
+			"name": "GetProductById - ROLE_USER",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaWx2YSIsImlhdCI6MTcxNDMxNTM5OCwiZXhwIjoxNzE0MzE3MTk4fQ.1db8sUBvfudlOfm-Zq3_uvI4GaI4HXMEobY6X5guIV8"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Amila\",\n    \"password\": \"secret\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Welcome Page",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBbWlsYSIsImlhdCI6MTcxNDMxNTA4MiwiZXhwIjoxNzE0MzE2ODgyfQ.MIvfpKWAPHsnYj8gcNyGNE0zfhpZ7lseRPRCNwcVnfM"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Amila\",\n    \"password\": \"secret\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/products/all"
+			},
+			"response": []
+		}
+	]
+}
